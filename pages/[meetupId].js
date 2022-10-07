@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   setTimeout(() => { client.close() }, 1500)
 
   return {
-    fallback: true,
+    fallback: 'blocking',
     paths: meetups.map(meetup => ({
       params: { meetupId: meetup._id.toString() }
     }))
